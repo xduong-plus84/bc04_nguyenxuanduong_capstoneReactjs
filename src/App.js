@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage/HomePage";
+import DetailMovie from "./Pages/DetailMovie/DetailMovie";
+import Layout from "./Layout/Layout";
+import "antd/dist/antd.css";
+import SignIn from "./Pages/LoginPage/SignIn";
+import SignUp from "./Pages/LoginPage/SignUp";
 
 function App() {
+  // console.log("App render - too many log :)))");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout Component={HomePage} />} />
+          <Route path="/sign-up" element={<Layout Component={SignUp} />} />
+          <Route path="/sign-in" element={<Layout Component={SignIn} />} />
+          <Route
+            path="/detail/:id"
+            element={<Layout Component={DetailMovie} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

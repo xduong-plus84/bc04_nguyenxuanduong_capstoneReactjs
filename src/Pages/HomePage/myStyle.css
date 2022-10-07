@@ -1,0 +1,22 @@
+/* custom dot carousel */
+.ant-carousel .slick-dots li {
+  width: auto !important;
+}
+.ant-carousel .slick-dots li button {
+  background: white !important;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.ant-carousel .slick-dots li.slick-active {
+  width: auto !important;
+}
+.ant-carousel .slick-dots li button {
+  height: 15px !important;
+  width: 15px !important;
+  border-radius: 50% !important;
+  margin: 0 10px;
+}

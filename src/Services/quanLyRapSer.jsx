@@ -13,4 +13,8 @@ export const quanLyRapSer = {
     let uri = `/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=${MANHOM}`;
     return https.get(uri);
   },
+  layThongTinLichChieuPhim: (maPhim) => {
+    let uri = `/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
+    return https.get(uri);
+  },
 };

@@ -40,7 +40,7 @@ export default function HomePage_Carousel() {
             >
               <img
                 src={item.hinhAnh}
-                className="mx-auto w-3/4 object-cover h-full opacity-1 shadow-2xl"
+                className="mx-auto w-3/4 object-cover h-full opacity-1 shadow-2xl rounded-lg"
               />
             </h3>
           </div>

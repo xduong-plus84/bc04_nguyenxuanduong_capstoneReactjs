@@ -42,7 +42,7 @@ export default function HomePage_TabRapLichChieu(props) {
               let time = moment(arrLichPhim.ngayChieuGioChieu).format("hh:mm");
 
               return (
-                <button className="mr-2 mb-2 p-2 font-semibold border rounded border-gray-800 bg-slate-100 hover:bg-slate-700 hover:text-yellow-100">
+                <button className="mr-2 mb-2 p-2 font-semibold border rounded border-gray-800 bg-slate-100 hover:bg-slate-700 hover:text-yellow-100 transition duration-300">
                   <span className="text-green-500">{day}</span>
                   <span> ~ </span>
                   <span className="text-red-500">{time}</span>

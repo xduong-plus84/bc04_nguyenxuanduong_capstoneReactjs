@@ -6,7 +6,7 @@ const backGroundLogin = {
 };
 export default function SignIn() {
   return (
-    <div className="flex justify-center items-center bg-gradient-to-b from-white to-yellow-700 h-screen">
+    <div className="flex justify-center items-center bg-gradient-to-b from-white to-zinc-700 pb-8 shadow-zinc-700 h-screen">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 w-3/12">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>

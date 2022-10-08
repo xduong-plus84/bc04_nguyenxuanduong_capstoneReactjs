@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SignUp() {
   return (
-    <div className="flex justify-center bg-gradient-to-b from-white to-yellow-700 h-screen items-center ">
+    <div className="flex justify-center bg-gradient-to-b from-white to-zinc-700 pb-8 shadow-zinc-700 h-screen items-center ">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 w-3/12">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign up</h1>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FooterTheme() {
   return (
-    <footer className="mt-20 px-4 divide-y bg-current ">
+    <footer className="p-4 divide-y bg-zinc-700 ">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3 flex justify-center items-center">
           <a
@@ -23,7 +23,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600 "
                 >
                   Features
                 </a>
@@ -32,7 +32,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Integrations
                 </a>
@@ -41,7 +41,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Pricing
                 </a>
@@ -50,7 +50,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   FAQ
                 </a>
@@ -64,7 +64,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Privacy
                 </a>
@@ -73,7 +73,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Terms of Service
                 </a>
@@ -87,7 +87,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Public API
                 </a>
@@ -96,7 +96,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Documentation
                 </a>
@@ -105,7 +105,7 @@ export default function FooterTheme() {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-yellow-700"
+                  className="text-yellow-600"
                 >
                   Guides
                 </a>
@@ -120,7 +120,7 @@ export default function FooterTheme() {
                 href="https://www.facebook.com/duongdanml/"
                 target="_blank"
                 title="Facebook"
-                className="flex items-center p-1 text-yellow-700"
+                className="flex items-center p-1 text-yellow-600"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ export default function FooterTheme() {
                 href="https://www.instagram.com/xuanduongml/"
                 target="_blank"
                 title="Instagram"
-                className="flex items-center p-1 text-yellow-700"
+                className="flex items-center p-1 text-yellow-600"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

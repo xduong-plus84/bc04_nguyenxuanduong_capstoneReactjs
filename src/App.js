@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import DetailMovie from "./Pages/DetailMovie/DetailMovie";
 import Layout from "./Layout/Layout";

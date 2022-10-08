@@ -82,11 +82,15 @@ export default function HomePage_MovieList() {
 
   return (
     <div className="container w-2/3 mx-auto py-5">
-      {/* <Divider orientation="left">Danh sach phim</Divider> */}
-      <Row className="my-4" gutter={[16, 24]}>
-        {renderMovieItem()}
-      </Row>
-
+      <Divider orientation="left">Danh sach phim</Divider>
+      <div className="my-5">
+        <button className=" mx-5 self-center px-8 py-3 font-semibold rounded bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500">
+          Phim đang chiếu
+        </button>
+        <button className="mx-5 self-center px-8 py-3 font-semibold rounded bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500">
+          Phim sắp chiếu
+        </button>
+      </div>
       <Pagination
         defaultCurrent={1}
         total={danhSachPhim.length}
@@ -95,6 +99,9 @@ export default function HomePage_MovieList() {
           handleChangePagination(page, pageSize);
         }}
       />
+      <Row className="my-4" gutter={[16, 24]}>
+        {renderMovieItem()}
+      </Row>
     </div>
   );
 }

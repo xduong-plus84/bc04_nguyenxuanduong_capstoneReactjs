@@ -27,7 +27,7 @@ export default function HomePage_Carousel() {
       });
   }, []);
   return (
-    <Carousel>
+    <Carousel autoplay>
       {dataCarousel.map((item, index) => {
         return (
           <div key={index}>

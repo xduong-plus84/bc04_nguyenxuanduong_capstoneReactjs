@@ -1,0 +1,49 @@
+.gheThuong {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 9px;
+  color: #000;
+  font-weight: bold;
+  background-color: bisque;
+}
+.gheThuong:hover {
+  background-color: greenyellow;
+}
+.gheVip {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 9px;
+  color: #000;
+  font-weight: bold;
+  background-color: orangered;
+}
+
+.gheDaDat {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 9px;
+  color: #000;
+  font-weight: bold;
+  background-color: black;
+  cursor: no-drop;
+}
+.gheDangChon {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 9px;
+  color: #000;
+  font-weight: bold;
+  background-color: greenyellow;
+}

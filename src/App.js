@@ -6,6 +6,7 @@ import Layout from "./Layout/Layout";
 import "antd/dist/antd.css";
 import SignIn from "./Pages/LoginPage/SignIn";
 import SignUp from "./Pages/LoginPage/SignUp";
+import BookingTicket from "./Pages/BookingTicket/BookingTicket";
 
 function App() {
   // console.log("App render - too many log :)))");
@@ -19,6 +20,10 @@ function App() {
           <Route
             path="/detail/:id"
             element={<Layout Component={DetailMovie} />}
+          />
+          <Route
+            path="/booking-ticket/:maLichChieu"
+            element={<BookingTicket />}
           />
         </Routes>
       </BrowserRouter>

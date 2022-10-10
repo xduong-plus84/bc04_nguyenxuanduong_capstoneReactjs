@@ -54,7 +54,9 @@ export default function HomePage_MovieList() {
       <Pagination
         defaultCurrent={2}
         total={danhSachPhim.length == 0 ? 1 : danhSachPhim.length}
-        pageSize={4}
+        defaultPageSize={4}
+        showSizeChanger
+        pageSizeOptions={[4, 8, 16, 100]}
         onChange={(page, pageSize) => {
           handleChangePagination(page, pageSize);
         }}

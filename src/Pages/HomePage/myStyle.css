@@ -21,35 +21,54 @@
   margin: 0 10px;
 }
 
-/* custom màn hình */
-.trapezoid {
-  width: 75%;
-  height: 30px;
-  /* border: 3px solid transparent; */
-  /* border-image: linear-gradient(to bottom, black, lightgreen); */
-  background-image: linear-gradient(to bottom, black, white);
-  /* border-image-slice: 1; */
-  position: relative;
-  opacity: 0.5;
+/* custom tab*/
+
+.ant-tabs > .ant-tabs-nav .ant-tabs-nav-list,
+.ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-list {
+  color: black;
+  font-weight: 700;
 }
 
-.trapezoid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 20px;
-  border-top: 30px solid white;
-  border-right: 10px solid transparent;
+.ant-tabs-tab:hover {
+  color: rgb(202 138 4) !important;
 }
-.trapezoid::after {
-  content: "";
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: rgb(202 138 4) !important;
+}
+/* custom cái thanh bên phải của tab active  */
+.ant-tabs-ink-bar {
+  background: rgb(202 138 4) !important;
+}
+
+/* custom tag a  */
+a:hover {
+  color: white !important;
+}
+
+/* custom arrow in carousel  */
+.arrowStyle {
+  font-size: 70px;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 5px;
-  height: 20px;
-  border-top: 30px solid white;
-  border-left: 10px solid transparent;
+  top: 40%;
+  z-index: 10;
+}
+
+.pauseStyle:hover {
+  transform: scale(1.5);
+  opacity: 0.5;
+  transition-duration: 0.5s;
+}
+.pauseStyle:hover h3 img {
+  filter: invert(100%);
+}
+.arrowStyle.arrowLeft:hover {
+  opacity: 0.5;
+  transform: translateX(-20px);
+  transition-duration: 0.5s;
+}
+.arrowStyle.arrowRight:hover {
+  opacity: 0.5;
+  transform: translateX(20px);
+  transition-duration: 0.5s;
 }

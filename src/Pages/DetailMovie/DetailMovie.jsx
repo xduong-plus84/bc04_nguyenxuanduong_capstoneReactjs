@@ -116,7 +116,13 @@ export default function DetailMovie(props) {
             </a>
           </div>
         </div>
-        <Tabs centered items={items} style={{ maxHeight: 700 }} id="datve" />
+        <Tabs
+          centered
+          items={items}
+          style={{ maxHeight: 700 }}
+          id="datve"
+          className="bg-white rounded-xl"
+        />
       </div>
     </div>
   );

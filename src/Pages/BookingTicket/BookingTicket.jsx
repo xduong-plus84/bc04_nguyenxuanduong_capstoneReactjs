@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { serviceQuanLyDatVe } from "../../Services/serviceQuanLyDatVe";
 import manHinh from "./manHinh.module.css";
 import gheStyle from "./ghe.module.css";
@@ -9,9 +9,12 @@ import {
   setLoadingOffAction,
   setLoadingOnAction,
 } from "../../redux/actions/actionLoading";
+import { ThongTinDatGhe } from "../../_core/models/ThongTinDatGhe";
+import { message } from "antd";
 
 export default function BookingTicket() {
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   let { maLichChieu } = useParams();
 
@@ -34,11 +37,39 @@ export default function BookingTicket() {
   }, []);
 
   let { arrGheChon } = useSelector((state) => state.reducerQuanLyRap);
-  console.log("arrGheChon: ", arrGheChon);
 
   const handleChonGhe = (props) => {
     let action = chonGheAction(props);
     dispatch(action);
+  };
+
+  const handleDatVe = () => {
+    const thongTinDatGhe = new ThongTinDatGhe();
+    thongTinDatGhe.maLichChieu = maLichChieu;
+    thongTinDatGhe.danhSachVe = arrGheChon;
+
+    serviceQuanLyDatVe
+      .datVe(thongTinDatGhe)
+      .then((res) => {
+        console.log(res);
+        onSuccess();
+      })
+      .catch((err) => {
+        console.log(err);
+        onFail();
+      });
+  };
+
+  let onSuccess = () => {
+    message.success("Đặt vé thành công");
+    setTimeout(() => {
+      navigate(-1);
+
+      // history.back();
+    }, 1000);
+  };
+  let onFail = () => {
+    message.error("Đặt vé thất bại");
   };
 
   let renderMotaGhe = () => {
@@ -154,7 +185,12 @@ export default function BookingTicket() {
             </div>
           </div>
         </div>
-        <button className="text-white font-bold border-solid border-2 border-transparent bg-red-500 w-full py-3 fond-bold text-2xl rounded-xl hover:bg-transparent hover:text-red-500 hover:border-red-500 transition duration-300">
+        <button
+          onClick={() => {
+            handleDatVe();
+          }}
+          className="text-white font-bold border-solid border-2 border-transparent bg-red-500 w-full py-3 fond-bold text-2xl rounded-xl hover:bg-transparent hover:text-red-500 hover:border-red-500 transition duration-300"
+        >
           Đặt vé
         </button>
       </div>

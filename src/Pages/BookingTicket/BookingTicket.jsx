@@ -1,10 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { quanLyDatVeSer } from "../../Services/quanLyDatVeSer";
+import { serviceQuanLyDatVe } from "../../Services/serviceQuanLyDatVe";
 import manHinh from "./manHinh.module.css";
 import gheStyle from "./ghe.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { chonGheAction } from "../../redux/actions/chonGheAction";
+import { chonGheAction } from "../../redux/actions/actionsQuanLyRap";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
 
 export default function BookingTicket() {
   let dispatch = useDispatch();
@@ -15,18 +19,21 @@ export default function BookingTicket() {
   let { thongTinPhim, danhSachGhe } = phongVe;
 
   useEffect(() => {
-    quanLyDatVeSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyDatVe
       .layDanhSachPhongVe(maLichChieu)
       .then((res) => {
         let result = res.data.content;
         setPhongVe(result);
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
         console.log(err);
+        dispatch(setLoadingOffAction());
       });
   }, []);
 
-  let { arrGheChon } = useSelector((state) => state.quanLyRapReducer);
+  let { arrGheChon } = useSelector((state) => state.reducerQuanLyRap);
   console.log("arrGheChon: ", arrGheChon);
 
   const handleChonGhe = (props) => {

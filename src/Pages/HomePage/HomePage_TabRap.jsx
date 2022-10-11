@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { Tabs } from "antd";
-import { quanLyRapSer } from "../../Services/quanLyRapSer";
+import { serviceQuanLyRap } from "../../Services/serviceQuanLyRap";
 import HomePage_TabRapAddress from "./HomePage_TabRapAddress";
+import { useDispatch } from "react-redux";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
 
 export default function HomePage_TabRap() {
+  let dispatch = useDispatch();
   const [heThongRap, setHeThongRap] = useState([]);
 
   useEffect(() => {
-    quanLyRapSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyRap
       .layThongTinHeThongRap()
       .then((res) => {
-        // console.log(res);
         setHeThongRap(res.data.content);
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
         console.log(err);
+        dispatch(setLoadingOffAction());
       });
   }, []);
 

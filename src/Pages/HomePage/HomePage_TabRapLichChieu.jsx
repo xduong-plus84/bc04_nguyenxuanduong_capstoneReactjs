@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { quanLyRapSer } from "../../Services/quanLyRapSer";
+import { serviceQuanLyRap } from "../../Services/serviceQuanLyRap";
 import moment from "moment";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
 
 export default function HomePage_TabRapLichChieu(props) {
+  let dispatch = useDispatch();
+
   let { maCumRap, maHeThongRap } = props;
-  //   console.log("maCumRap: ", maCumRap);
 
   const [arrPhim, setArrPhim] = useState([]);
 
   useEffect(() => {
-    quanLyRapSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyRap
       .layThongTinLichChieuHeThongRap(maHeThongRap)
       .then((res) => {
-        // console.log("res: ", res);
-        // setarrayPhim(res.data.content.)
-        let dataNeed = res.data.content[0].lstCumRap.filter(
+        let result = res.data.content[0].lstCumRap.filter(
           (item) => item.maCumRap === maCumRap
         );
-        setArrPhim(dataNeed[0].danhSachPhim);
+        setArrPhim(result[0].danhSachPhim);
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
         console.log(err);
+        dispatch(setLoadingOffAction());
       });
   }, []);
 

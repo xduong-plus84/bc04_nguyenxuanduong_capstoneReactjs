@@ -1,6 +1,6 @@
 import { https } from "./configURL";
 
-export const quanLyDatVeSer = {
+export const serviceQuanLyDatVe = {
   layDanhSachPhongVe: (maLichChieu) => {
     let uri = `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`;
     return https.get(uri);

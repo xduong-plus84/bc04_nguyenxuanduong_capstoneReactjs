@@ -7,11 +7,13 @@ import "antd/dist/antd.css";
 import SignIn from "./Pages/LoginPage/SignIn";
 import SignUp from "./Pages/LoginPage/SignUp";
 import BookingTicket from "./Pages/BookingTicket/BookingTicket";
+import Loading from "./Components/Loading/Loading";
 
 function App() {
   // console.log("App render - too many log :)))");
   return (
     <div className="App">
+      <Loading />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout Component={HomePage} />} />

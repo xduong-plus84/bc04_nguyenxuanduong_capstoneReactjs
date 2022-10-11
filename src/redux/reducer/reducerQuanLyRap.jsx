@@ -1,12 +1,12 @@
 //rxr
 
-import { CHON_GHE } from "../constants/quanLyRap";
+import { CHON_GHE } from "../constants/constantsQuanLyRap";
 
 let initialState = {
   arrGheChon: [],
 };
 
-export let quanLyRapReducer = (state = initialState, action) => {
+export let reducerQuanLyRap = (state = initialState, action) => {
   switch (action.type) {
     case CHON_GHE: {
       let cloneArrGheChon = [...state.arrGheChon];

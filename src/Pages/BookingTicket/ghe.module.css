@@ -9,8 +9,10 @@
   font-weight: bold;
   background-color: bisque;
 }
-.gheThuong:hover {
+.gheThuong:hover,
+.gheVip:hover {
   background-color: greenyellow;
+  transition: all 0.5s;
 }
 .gheVip {
   width: 35px;

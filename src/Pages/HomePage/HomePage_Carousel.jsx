@@ -1,12 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "antd";
 import "./myStyle.css";
-import { quanLyPhimSer } from "../../Services/quanLyPhimSer";
+import { serviceQuanLyPhim } from "../../Services/serviceQuanLyPhim";
 import {
   RightOutlined,
   LeftOutlined,
   PlayCircleOutlined,
 } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
+
 const contentStyle = {
   height: "600px",
   color: "#fff",
@@ -17,25 +23,22 @@ const contentStyle = {
   backgroundRepeat: "no-repeat",
 };
 
-// const arrowStyle = {
-//   fontSize: "60px",
-//   color: "black",
-//   position: "absolute",
-//   top: "40%",
-//   zIndex: "10",
-// };
-
 export default function HomePage_Carousel() {
+  let dispatch = useDispatch();
+
   const [dataCarousel, setDataCarousel] = useState([]);
 
   useEffect(() => {
-    quanLyPhimSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyPhim
       .layDanhSachBanner()
       .then((res) => {
         setDataCarousel(res.data.content);
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
         console.log(err);
+        dispatch(setLoadingOffAction());
       });
   }, []);
 

@@ -2,23 +2,33 @@ import { Rate, Tabs } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import moment from "moment";
-import { quanLyRapSer } from "../../Services/quanLyRapSer";
+import { serviceQuanLyRap } from "../../Services/serviceQuanLyRap";
 import DetailMovie_TabRapAddress from "./DetailMovie_TabRapAddress";
+import { useDispatch } from "react-redux";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
 
 export default function DetailMovie(props) {
+  let dispatch = useDispatch();
+
   let { id } = useParams();
 
   let [phim, setPhim] = useState({});
 
   useEffect(() => {
-    quanLyRapSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyRap
       .layThongTinLichChieuPhim(id)
       .then((res) => {
         let content = res.data.content;
         setPhim(content);
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
         console.log(err);
+        dispatch(setLoadingOffAction());
       });
   }, []);
 

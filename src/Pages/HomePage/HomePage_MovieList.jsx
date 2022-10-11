@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Col, Divider, Pagination, Row } from "antd";
 import ItemMovie from "../../Components/ItemMovie";
-import { quanLyPhimSer } from "../../Services/quanLyPhimSer";
+import { serviceQuanLyPhim } from "../../Services/serviceQuanLyPhim";
+import { useDispatch } from "react-redux";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../redux/actions/actionLoading";
 
 export default function HomePage_MovieList() {
+  let dispatch = useDispatch();
+
   const [danhSachPhim, setDanhSachPhim] = useState([]);
   let [dataRender, setDataRender] = useState([]);
 
   useEffect(() => {
-    quanLyPhimSer
+    dispatch(setLoadingOnAction());
+    serviceQuanLyPhim
       .layDanhSachPhim()
       .then((res) => {
         let content = res.data.content;
         setDanhSachPhim(content);
         setDataRender(content.slice(0, 4));
+        dispatch(setLoadingOffAction());
       })
       .catch((err) => {
+        dispatch(setLoadingOffAction());
         console.log(err);
       });
   }, []);

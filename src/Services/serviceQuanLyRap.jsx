@@ -1,6 +1,6 @@
 import { https, MANHOM } from "./configURL";
 
-export const quanLyRapSer = {
+export const serviceQuanLyRap = {
   layThongTinHeThongRap: () => {
     let uri = "/api/QuanLyRap/LayThongTinHeThongRap";
     return https.get(uri);

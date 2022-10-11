@@ -7,8 +7,6 @@ import { serviceLocalStorageUser } from "../../Services/serviceLocalStorageUser"
 export default function HeaderTheme() {
   let dispatch = useDispatch();
   let { userInfor } = useSelector((state) => state.reducerQuanLyNguoiDung);
-  console.log("userInfor: ", userInfor);
-
   let handleLogOut = () => {
     console.log("logout");
     serviceLocalStorageUser.user.remove();

@@ -1,4 +1,8 @@
-import { DANG_NHAP, DANG_XUAT } from "../constants/constantsQuanLyNguoiDung";
+import {
+  DANG_KY,
+  DANG_NHAP,
+  DANG_XUAT,
+} from "../constants/constantsQuanLyNguoiDung";
 
 export let dangNhapAction = (thongTinDangNhap) => {
   return {
@@ -9,5 +13,11 @@ export let dangNhapAction = (thongTinDangNhap) => {
 export let dangXuatAction = () => {
   return {
     type: DANG_XUAT,
+  };
+};
+export let dangKyAction = (thongTinDangKy) => {
+  return {
+    type: DANG_KY,
+    payload: thongTinDangKy,
   };
 };

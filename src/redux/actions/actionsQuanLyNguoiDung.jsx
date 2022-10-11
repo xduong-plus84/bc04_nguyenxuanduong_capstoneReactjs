@@ -1,8 +1,13 @@
-import { CHON_GHE } from "../constants/quanLyRap";
+import { DANG_NHAP, DANG_XUAT } from "../constants/constantsQuanLyNguoiDung";
 
-export let chonGheAction = (ghe) => {
+export let dangNhapAction = (thongTinDangNhap) => {
   return {
-    type: CHON_GHE,
-    payload: ghe,
+    type: DANG_NHAP,
+    payload: thongTinDangNhap,
+  };
+};
+export let dangXuatAction = () => {
+  return {
+    type: DANG_XUAT,
   };
 };

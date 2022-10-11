@@ -1,7 +1,7 @@
 import { SET_LOADING_OFF, SET_LOADING_ON } from "../constants/constantsLoading";
 
 let initalState = {
-  isLoading: true,
+  isLoading: false,
 };
 
 export const reducerLoading = (state = initalState, { type, payloaed }) => {

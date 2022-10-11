@@ -42,9 +42,9 @@
 }
 
 /* custom tag a  */
-a:hover {
-  color: rgb(205, 199, 199) !important;
-}
+/* a:hover {
+  color:  !important;
+} */
 
 /* custom arrow in carousel  */
 .arrowStyle {

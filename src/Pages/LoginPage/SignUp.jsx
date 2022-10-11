@@ -47,7 +47,7 @@ export default function SignUp() {
                 type="button"
                 className="w-full px-8 py-3 font-semibold rounded-md bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500"
               >
-                Sign up
+                Register
               </button>
             </div>
           </div>

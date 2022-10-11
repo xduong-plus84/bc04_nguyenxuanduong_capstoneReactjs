@@ -1,12 +1,8 @@
-import { https, MANHOM } from "./configURL";
+import { https } from "./configURL";
 
 export const serviceQuanLyNguoiDung = {
-  layDanhSachBanner: () => {
-    let uri = "/api/QuanLyPhim/LayDanhSachBanner";
-    return https.get(uri);
-  },
-  layDanhSachPhim: () => {
-    let uri = `/api/QuanLyPhim/LayDanhSachPhim?maNhom=${MANHOM}`;
-    return https.get(uri);
+  dangNhap: (thongTinDangNhap) => {
+    let uri = "/api/QuanLyNguoiDung/DangNhap";
+    return https.post(uri, thongTinDangNhap);
   },
 };

@@ -1,10 +1,50 @@
+import { message } from "antd";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { dangNhapAction } from "../../redux/actions/actionsQuanLyNguoiDung";
+import { serviceLocalStorageUser } from "../../Services/serviceLocalStorageUser";
+import { serviceQuanLyNguoiDung } from "../../Services/serviceQuanLyNguoiDung";
+import { history } from "../../App";
 
-const backGroundLogin = {
-  backGround: `http://demo1.cybersoft.edu.vn/static/media/backapp.b46ef3a1.jpg`,
-};
 export default function SignIn() {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+
+  let handleLogin = () => {
+    let thongTinDangNhap = {
+      taiKhoan: "string",
+      matKhau: "string",
+    };
+
+    serviceQuanLyNguoiDung
+      .dangNhap(thongTinDangNhap)
+      .then((res) => {
+        let result = res.data.content;
+        console.log("result: ", result);
+        onSuccess(); // hien thong bao
+        serviceLocalStorageUser.user.set(result); // luu data localStorage
+        dispatch(dangNhapAction(result)); // thay doi du lieu tren store
+      })
+      .catch((err) => {
+        console.log(err);
+        onFail();
+      });
+  };
+
+  let onSuccess = () => {
+    message.success("Đăng nhập thành công");
+    setTimeout(() => {
+      navigate(-1);
+
+      // history.back();
+      console.log("chuyen trang");
+    }, 1000);
+  };
+  let onFail = () => {
+    message.error("Đăng nhập thất bại");
+  };
+
   return (
     <div className="flex justify-center items-center bg-gradient-to-b from-white to-zinc-700 pb-8 shadow-zinc-700 h-screen">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 w-3/12">
@@ -71,17 +111,18 @@ export default function SignIn() {
               <button
                 type="button"
                 className="w-full px-8 py-3 font-semibold rounded-md bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500"
+                onClick={() => handleLogin()}
               >
-                Sign in
+                Login
               </button>
             </div>
             <p className="px-6 text-sm text-center text-gray-600">
               Don't have an account yet?
               <NavLink
-                to="/sign-up"
+                to="/sign-in/sign-up"
                 className="hover:underline text-yellow-600 ml-1"
               >
-                Sign up
+                Đăng kí
               </NavLink>
             </p>
           </div>

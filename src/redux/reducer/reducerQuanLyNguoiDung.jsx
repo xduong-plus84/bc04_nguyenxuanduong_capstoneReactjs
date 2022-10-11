@@ -9,19 +9,18 @@ import {
 
 let initialState = {
   userInfor: serviceLocalStorageUser.user.get(),
-  isLoggedIn: false,
 };
 
 export let reducerQuanLyNguoiDung = (state = initialState, action) => {
   switch (action.type) {
     case DANG_NHAP: {
-      return { ...state, isLoggedIn: true, userInfor: action.payload };
+      return { ...state, userInfor: action.payload };
     }
     case DANG_XUAT: {
-      return { ...state, isLoggedIn: false };
+      return { ...state, userInfor: null };
     }
     case DANG_KY: {
-      return { ...state, isLoggedIn: true, userInfor: action.payload };
+      return { ...state, userInfor: action.payload };
     }
     default: {
       return { ...state };

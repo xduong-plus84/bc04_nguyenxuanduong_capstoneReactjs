@@ -63,8 +63,9 @@ export default function BookingTicket() {
   let onSuccess = () => {
     message.success("Đặt vé thành công");
     setTimeout(() => {
-      navigate(-1);
-
+      // navigate(-1);
+      // window.location.href = "/";
+      window.location.reload(true);
       // history.back();
     }, 1000);
   };
@@ -102,7 +103,6 @@ export default function BookingTicket() {
   let renderLayoutGhe = () => {
     return danhSachGhe?.map((ghe, index) => {
       let classNameGhe = "null";
-
       let { daDat, loaiGhe } = ghe;
       loaiGhe == "Thuong"
         ? (classNameGhe = "gheThuong")
@@ -122,6 +122,7 @@ export default function BookingTicket() {
         <Fragment key={index}>
           <button
             onClick={() => handleChonGhe(ghe)}
+            disabled={daDat}
             className={`${gheStyle[classNameGhe]}`}
           >
             {index + 1}

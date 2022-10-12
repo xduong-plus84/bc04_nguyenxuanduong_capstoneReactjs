@@ -53,14 +53,14 @@ export default function HomePage_MovieList() {
   return (
     <div className="container w-2/3 mx-auto py-5">
       <Divider orientation="left">Danh sách phim</Divider>
-      <div className="my-5">
+      {/* <div className="my-5">
         <button className=" mx-5 self-center px-8 py-3 font-semibold rounded bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500">
           Phim đang chiếu
         </button>
         <button className="mx-5 self-center px-8 py-3 font-semibold rounded bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500">
           Phim sắp chiếu
         </button>
-      </div>
+      </div> */}
       <Pagination
         defaultCurrent={2}
         total={danhSachPhim.length == 0 ? 1 : danhSachPhim.length}

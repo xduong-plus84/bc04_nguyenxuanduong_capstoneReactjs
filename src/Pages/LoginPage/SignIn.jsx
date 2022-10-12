@@ -116,19 +116,23 @@ export default function SignIn() {
           </div>
           <div className="space-y-2">
             <div>
-              <button className="w-full px-8 py-3 font-semibold rounded-md bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500">
+              <button
+                type="submit"
+                className="w-full px-8 py-3 font-semibold rounded-md bg-yellow-600 text-gray-50 hover:bg-yellow-700 transition duration-500"
+              >
                 Login
               </button>
             </div>
-            <p className="px-6 text-sm text-center text-gray-600">
-              Don't have an account yet?
-              <NavLink
-                to="/sign-in/sign-up"
-                className="hover:underline text-yellow-600 ml-1"
-              >
-                Register
-              </NavLink>
-            </p>
+            <div className="border-b-2"></div>
+            or
+            <NavLink
+              to="/sign-in/sign-up"
+              className="hover:underline text-white mx-5"
+            >
+              <button className="w-2/3 mt-3 px-8 py-3 font-semibold rounded-md bg-green-600 text-gray-50 hover:bg-green-700 transition duration-500">
+                Create new account
+              </button>
+            </NavLink>
           </div>
         </form>
       </div>

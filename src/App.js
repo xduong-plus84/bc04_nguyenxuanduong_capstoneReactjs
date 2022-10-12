@@ -10,6 +10,7 @@ import BookingTicket from "./Pages/BookingTicket/BookingTicket";
 import Loading from "./Components/Loading/Loading";
 import { createBrowserHistory } from "history";
 import { Protected } from "./Pages/BookingTicket/Protected";
+import BookingTicketReusult from "./Pages/BookingTicket/BookingTicketReusult";
 
 export const history = createBrowserHistory();
 
@@ -38,6 +39,10 @@ function App() {
                 <BookingTicket />
               </Protected>
             }
+          />
+          <Route
+            path="/booking-ticket/result"
+            element={<BookingTicketReusult />}
           />
         </Routes>
       </BrowserRouter>

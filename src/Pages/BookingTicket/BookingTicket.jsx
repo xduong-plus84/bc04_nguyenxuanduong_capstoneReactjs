@@ -64,8 +64,8 @@ export default function BookingTicket() {
     message.success("Đặt vé thành công");
     setTimeout(() => {
       // navigate(-1);
-      // window.location.href = "/";
-      window.location.reload(true);
+      window.location.href = "/booking-ticket/result";
+      // window.location.reload(true);
       // history.back();
     }, 1000);
   };

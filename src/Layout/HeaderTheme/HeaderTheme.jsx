@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { dangXuatAction } from "../../redux/actions/actionsQuanLyNguoiDung";
 import { serviceLocalStorageUser } from "../../Services/serviceLocalStorageUser";
+import { LogoutOutlined } from "@ant-design/icons";
 
 export default function HeaderTheme() {
   let dispatch = useDispatch();
   let { userInfor } = useSelector((state) => state.reducerQuanLyNguoiDung);
   let handleLogOut = () => {
-    console.log("logout");
+    // console.log("logout");
     serviceLocalStorageUser.user.remove();
     dispatch(dangXuatAction());
     window.location.href = "/sign-in";
@@ -38,9 +39,12 @@ export default function HeaderTheme() {
             onClick={() => {
               handleLogOut();
             }}
-            className="mr-5 px-2 py-1 font-semibold rounded-xl bg-yellow-600 text-white border-solid border-2 border-transparent hover:bg-transparent hover:text-yellow-600 hover:border-yellow-600 transition duration-500"
+            className="py-1 px-3 font-semibold rounded-xl bg-yellow-600 text-white border-solid border-2 border-transparent hover:bg-transparent hover:text-yellow-600 hover:border-yellow-600 transition duration-500"
           >
-            Log outt
+            <div className="flex justify-center items-center">
+              <span className="mr-2">LogOut</span>
+              <LogoutOutlined />
+            </div>
           </button>
         </div>
       );

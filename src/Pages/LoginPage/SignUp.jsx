@@ -29,8 +29,6 @@ export default function SignUp() {
           let result = res.data.content;
           console.log("result: ", result);
           onSuccess(); // hien thong bao
-          serviceLocalStorageUser.user.set(result); // luu data localStorage
-          dispatch(dangKyAction(result)); // thay doi du lieu tren store
         })
         .catch((err) => {
           console.log(err);
@@ -42,7 +40,7 @@ export default function SignUp() {
   let onSuccess = () => {
     message.success("Đăng ký thành công");
     setTimeout(() => {
-      navigate(-2);
+      navigate(-1);
 
       // history.back();
     }, 1000);

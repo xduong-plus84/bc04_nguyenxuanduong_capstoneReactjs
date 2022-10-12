@@ -22,7 +22,6 @@ export default function SignIn() {
         .dangNhap(thongTinDangNhap)
         .then((res) => {
           let result = res.data.content;
-          console.log("result: ", result);
           onSuccess(); // hien thong bao
           serviceLocalStorageUser.user.set(result); // luu data localStorage
           dispatch(dangNhapAction(result)); // thay doi du lieu tren store

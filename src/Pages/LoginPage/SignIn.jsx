@@ -33,17 +33,10 @@ export default function SignIn() {
     },
   });
 
-  // let handleLogin = () => {
-  //   let thongTinDangNhap = {
-  //     taiKhoan: "string",
-  //     matKhau: "string",
-  //   };
-  // };
-
   let onSuccess = () => {
     message.success("Đăng nhập thành công");
     setTimeout(() => {
-      navigate(-1);
+      navigate("/");
 
       // history.back();
     }, 1000);

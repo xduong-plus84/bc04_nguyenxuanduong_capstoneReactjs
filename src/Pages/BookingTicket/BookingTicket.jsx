@@ -51,7 +51,6 @@ export default function BookingTicket() {
     serviceQuanLyDatVe
       .datVe(thongTinDatGhe)
       .then((res) => {
-        console.log(res);
         onSuccess();
       })
       .catch((err) => {

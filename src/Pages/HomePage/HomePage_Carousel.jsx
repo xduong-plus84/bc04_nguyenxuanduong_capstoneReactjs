@@ -78,7 +78,7 @@ export default function HomePage_Carousel() {
                   className="arrowStyle pauseStyle"
                   style={{ color: "gray" }}
                   onClick={() => {
-                    console.log(index);
+                    // console.log(index);
                   }}
                 />
                 <img

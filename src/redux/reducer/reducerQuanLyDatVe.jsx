@@ -1,7 +1,6 @@
 //rxr
 
 let initialState = {
-  //   arrPhim: dataPhim,
   arrPhim: [],
   arrPhimRender: [],
 };

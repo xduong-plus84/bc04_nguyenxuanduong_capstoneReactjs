@@ -22,12 +22,10 @@ export default function SignUp() {
       hoTen: "",
     },
     onSubmit: (thongTinDangKy) => {
-      console.log("thongTinDangKy: ", thongTinDangKy);
       serviceQuanLyNguoiDung
         .dangKy(thongTinDangKy)
         .then((res) => {
           let result = res.data.content;
-          console.log("result: ", result);
           onSuccess(); // hien thong bao
         })
         .catch((err) => {
@@ -42,7 +40,7 @@ export default function SignUp() {
     setTimeout(() => {
       navigate("/sign-in");
 
-      // history.back();
+      // history.back();""
     }, 1000);
   };
   let onFail = (name) => {

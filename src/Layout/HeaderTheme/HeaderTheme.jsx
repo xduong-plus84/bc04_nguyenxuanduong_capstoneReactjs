@@ -9,7 +9,6 @@ export default function HeaderTheme() {
   let dispatch = useDispatch();
   let { userInfor } = useSelector((state) => state.reducerQuanLyNguoiDung);
   let handleLogOut = () => {
-    // console.log("logout");
     serviceLocalStorageUser.user.remove();
     dispatch(dangXuatAction());
     window.location.href = "/sign-in";

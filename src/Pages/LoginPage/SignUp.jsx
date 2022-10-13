@@ -40,7 +40,7 @@ export default function SignUp() {
   let onSuccess = () => {
     message.success("Đăng ký thành công");
     setTimeout(() => {
-      navigate(-1);
+      navigate("/sign-in");
 
       // history.back();
     }, 1000);
